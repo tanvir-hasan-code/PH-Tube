@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY-Site-PH-tube</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<style>
+		.btn-focus{
+			font-weight: bold;
+			background-color:#FF1F3D;
+			color: white;
+		}
+	</style>
+  </head>
+  <body>
+	<!-- header section start -->
+    <header>
+		<!-- primary navigation ber start -->
+      <nav class="md:w-11/12 mx-auto flex justify-between px-4 py-3 md:py-4 border-b-1 border-gray-400 items-center">
+        <div class="logo">
+			<a href="index.html"><img class="w-3/4 md:w-full" src="assets/Logo.png" alt="Logo"></a>
+		</div>
+        <div class="short">
+			<button class="btn btn-outline hidden md:block">Sort by view</button>
+		</div>
+        <div class="btn-blog">
+			<button class="btn bg-[#FF1F3D] text-white text-bold md:btn-lg">Blog</button>
+		</div>
+      </nav>
+	  <!-- secondary navigation ber start -->
+	   <nav id="btnContainer" class="md:w-11/12 mx-auto flex justify-center py-3 md:py-5 gap-2 md:gap-5">
+		<button onclick="clickBtn(this)" class="btn btn-sm btn-focus  hover:font-bold click-btn">All</button>
+	   </nav>
+    </header>
+	<!-- Main section start -->
+	 <main>
+		<!-- section start  -->
+		 <section id="videoContainer" class="md:w-11/12 md:mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+			
+		 </section>
+	 </main>
+	 <!-- footer section -->
+	  <footer>
+
+	  </footer>
+	<script src="script/app.js"></script>
+  </body>
+</html>
