@@ -11,7 +11,7 @@ function displayCategories(categories) {
 	for (const categorie of categories) {
 		const createDiv = document.createElement("div");
 		createDiv.innerHTML = `
-		<button onclick=clickBtn(this) class="btn btn-sm  hover:font-bold  click-btn">${categorie.category}</button>
+		<button onclick="clickBtn(this),loadCategories(${categorie["category_id"]})" class="btn btn-sm  hover:font-bold  click-btn">${categorie.category}</button>
 		`
 		btnContainer.appendChild(createDiv);
 	}
@@ -37,7 +37,7 @@ function loadVideo() {
 
 function displayVideo(videos) {
 	const videoContainer = document.getElementById("videoContainer");
-
+	videoContainer.innerHTML = "";
 	videos.forEach((video) => {
 		const div = document.createElement("div");
 		div.innerHTML = `
@@ -66,34 +66,12 @@ function displayVideo(videos) {
 		videoContainer.appendChild(div)
 	})
 }
+loadVideo();
 
+// others categories load function
 
-
-
-
-
-loadVideo()
-
-
-
-
-
-
-// {
-//     "category_id": "1001",
-//     "video_id": "aaaa",
-//     "thumbnail": "https://i.ibb.co/L1b6xSq/shape.jpg",
-//     "title": "Shape of You",
-//     "authors": [
-//         {
-//             "profile_picture": "https://i.ibb.co/D9wWRM6/olivia.jpg",
-//             "profile_name": "Olivia Mitchell",
-//             "verified": ""
-//         }
-//     ],
-//     "others": {
-//         "views": "100K",
-//         "posted_date": "16278"
-//     },
-//     "description": "Dive into the rhythm of 'Shape of You,' a captivating track that blends pop sensibilities with vibrant beats. Created by Olivia Mitchell, this song has already gained 100K views since its release. With its infectious melody and heartfelt lyrics, 'Shape of You' is perfect for fans looking for an uplifting musical experience. Let the music take over as Olivia's vocal prowess and unique style create a memorable listening journey."
-// }
+function loadCategories(id) {
+	fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
+		.then((res) => res.json())
+	.then((data)=>displayVideo(data.category))
+}
