@@ -38,6 +38,16 @@ function loadVideo() {
 function displayVideo(videos) {
 	const videoContainer = document.getElementById("videoContainer");
 	videoContainer.innerHTML = "";
+
+	if (videos.length === 0) {
+		videoContainer.innerHTML = `
+		<div class="md:w-11/12 mx-auto grid justify-center md:col-span-4 py-16">
+			<img class="mx-auto" src="../assets/Icon.png" alt="Oops-Icon">
+			<h3 class="text-center  mt-3 text-2xl font-bold">Oops!! Sorry, There is no <br> content here</h3>
+		 </div>
+		`
+		return;
+	}
 	videos.forEach((video) => {
 		const div = document.createElement("div");
 		div.innerHTML = `
@@ -75,3 +85,6 @@ function loadCategories(id) {
 		.then((res) => res.json())
 	.then((data)=>displayVideo(data.category))
 }
+
+// Not contant show popup
+document.getElementById("Oops").style.display = "none";
