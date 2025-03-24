@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,45 +10,70 @@
       type="text/css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-	<style>
-		.btn-focus{
-			font-weight: bold;
-			background-color:#FF1F3D;
-			color: white;
-		}
-	</style>
+    <style>
+      .btn-focus {
+        font-weight: bold;
+        background-color: #ff1f3d;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-	<!-- header section start -->
+    <!-- header section start -->
     <header>
-		<!-- primary navigation ber start -->
-      <nav class="md:w-11/12 mx-auto flex justify-between px-4 py-3 md:py-4 border-b-1 border-gray-400 items-center">
+      <!-- primary navigation ber start -->
+      <nav
+        class="md:w-11/12 mx-auto flex justify-between px-4 py-3 md:py-4 border-b-1 border-gray-400 items-center"
+      >
         <div class="logo">
-			<a href="index.html"><img class="w-3/4 md:w-full" src="assets/Logo.png" alt="Logo"></a>
+          <a href="index.html"
+            ><img class="w-3/4 md:w-full" src="assets/Logo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="flex items-center">
+			<label class="input  input-xs w-36 md:w-96 md:input-md ">
+				<svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+				<input id="search-input" type="search"  required placeholder="Search........"/>
+			</label>
 		</div>
-        <div class="short mr-30">
-			<button class="btn btn-outline hidden md:block">Sort by view</button>
-		</div>
-        <div class="btn-blog">
-			<button class="btn bg-[#FF1F3D] text-white text-bold md:btn-lg">Blog</button>
-		</div>
+        
+        </div>
       </nav>
-	  <!-- secondary navigation ber start -->
-	   <nav id="btnContainer" class="md:w-11/12 mx-auto flex justify-center py-3 md:py-5 gap-2 md:gap-5">
-		<button onclick="clickBtn(this),loadVideo()" class="btn btn-sm btn-focus  hover:font-bold click-btn">All</button>
-	   </nav>
+      <!-- secondary navigation ber start -->
+      <nav
+        id="btnContainer"
+        class="md:w-11/12 mx-auto flex justify-center py-3 md:py-5 gap-2 md:gap-5"
+      >
+        <button
+          onclick="clickBtn(this),loadVideo()"
+          class="btn btn-sm btn-focus hover:font-bold click-btn"
+        >
+          All
+        </button>
+      </nav>
     </header>
-	<!-- Main section start -->
-	 <main>
-		<!-- section start  -->
-		 <section id="videoContainer" class="md:w-11/12 md:mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
-			
-		 </section>
-	 </main>
-	 <!-- footer section -->
-	  <footer>
-
-	  </footer>
-	<script src="script/app.js"></script>
+    <!-- Main section start -->
+    <main>
+      <!-- section start  -->
+      <section
+        id="videoContainer"
+        class="md:w-11/12 md:mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5"
+      ></section>
+    </main>
+    <!-- footer section -->
+    <footer></footer>
+    <!-- Modal open video Details -->
+    <dialog id="video_modal" class="modal">
+      <div class="modal-box">
+       <div id="videoDetailsCard">
+		
+	   </div>
+          <form method="dialog" class="flex justify-end mt-5">
+            <button class="btn  btn-warning">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <script src="script/app.js"></script>
   </body>
 </html>
